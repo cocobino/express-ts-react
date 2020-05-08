@@ -4,9 +4,9 @@ export default class UserLoginVO {
     private _id : string;
     private _password : string;
 
-    constructor(userlogin : IuserLogin) {
-        this._id = userlogin.id;
-        this._password = userlogin.password;
+    constructor(id:string , password: string) {
+        this._id = id;
+        this._password = password;
     }
 
 
@@ -42,6 +42,9 @@ export default class UserLoginVO {
 	public set password(value: string) {
 		this._password = value;
 	}
-
+    
+    public toString() {
+        console.log(this._id, this._password);
+    }
     
 }

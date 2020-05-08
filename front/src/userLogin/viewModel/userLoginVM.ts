@@ -16,7 +16,7 @@ export default class UserLoginVM {
         }
         return this._userLoginVM;
     }
-
+    
     matchUser(userLogin : UserLoginVO) : boolean | null {
         return this._UserLoginModel.matchUser(userLogin);
     }
