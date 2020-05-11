@@ -3,8 +3,6 @@ import {matchUser} from '../repository/userLoginRepo';
 export default class UserLoginModel {
     private static _UserLoginModel : UserLoginModel | null = null;
     private _UserLoginVO : UserLoginVO | null = null;
-    static UserLoginModel: UserLoginModel;
-
     
     //singleton
     private constructor() {}

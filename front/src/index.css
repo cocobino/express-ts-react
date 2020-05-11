@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  background: url(./common/images/background_gradation.png);
+  
+}
+
+#root {
+  margin: 0 auto;
+  width: 1130px;
+  height: 100%;
+}

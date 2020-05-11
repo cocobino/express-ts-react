@@ -1,0 +1,17 @@
+.userLoginContent {
+    margin: 0 auto;
+    position: relative;
+    width: 250px;
+    top: 400px;
+}
+
+
+.userLoginForm > input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    margin-bottom: 5px;
+    opacity: 0.8;
+    border-radius: 5px;
+}
+

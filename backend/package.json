@@ -4,6 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@types/react-router": "^5.1.7",
+    "@types/react-router-dom": "^5.1.5",
     "concurrently": "^5.2.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.3"
@@ -11,8 +13,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server.js",
-    "front" : "cd ../front && npm start",
-    "dev" : "concurrently \"npm run server\" \"npm run front\""
+    "front": "cd ../front && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run front\""
   },
   "devDependencies": {},
   "author": "",

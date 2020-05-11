@@ -7,5 +7,6 @@ import UserLoginVO from "../VO/userLoginVO";
  }
 
  export const matchUser = (userLogin : UserLoginVO | null) : boolean | null => {
+     window.location.href='/mainChat';
     return true;
  }

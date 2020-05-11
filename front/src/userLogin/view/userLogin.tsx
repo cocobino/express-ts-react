@@ -13,7 +13,6 @@ const Content = observer(() => {
 
     const onSubmit = (e : any) => {
         e.preventDefault();
-        debugger;
         userLoginVM.matchUser(new UserLoginVO(id, password));
     }
 
@@ -30,9 +29,9 @@ const Content = observer(() => {
     
     return (
     <>
-        <form method="post" onSubmit={onSubmit}>
+        <form method="post" onSubmit={onSubmit} className="userLoginForm">
             <input type="text" name="id" onChange={onChange}/>
-            <input type="password" name="password" onChange={onChange}/>
+            <input type="password" name="password" onChange={onChange}/> <br />
             <input type="submit" />
         </form>
     </>
