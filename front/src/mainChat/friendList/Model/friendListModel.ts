@@ -1,7 +1,10 @@
 import {getFriendList} from '../repository/friendListRepo';
+import {observable} from 'mobx';
+import FriendJson from './friendList.json';
+
 
 export default class FriendListModel {
-    private static _friendListModel : FriendListModel | null = null;
+    @observable private static _friendListModel : FriendListModel | null = null;
     
     private constructor() {}
     public static getInstance() : FriendListModel {
@@ -12,7 +15,7 @@ export default class FriendListModel {
         return this._friendListModel;
     }
 
-    getFriendList(id :string):[] {        
-        return getFriendList(id);
+    getFriendList(id :string): any {        
+        return FriendJson;
     } 
 }

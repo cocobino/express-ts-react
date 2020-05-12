@@ -1,0 +1,32 @@
+.friendList > a {
+    list-style: none;
+    background: whitesmoke;
+    opacity: 0.6;
+    height: 50px;
+    margin-bottom: 2px;
+    padding-left: 10px;
+    width: 98%;
+    display: inline-block;
+}
+
+.peopleName {
+    font-weight: bold;
+}
+
+.friendList > a:hover {
+    transition: ease 0.3s transform;
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.friendList {
+    max-height: 1000px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.friendList > a {
+    text-decoration: none;
+    color: black;
+}
+

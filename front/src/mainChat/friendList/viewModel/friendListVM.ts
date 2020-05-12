@@ -14,8 +14,10 @@ export default class FriendListVM {
         }
         return this._FriendListVM;
     }
+    
 
-    getFriendList(id : string) {
+    //friendList
+    getFriendList(id : string) : any{
         return this._FriendListModel.getFriendList(id);
     }
 }

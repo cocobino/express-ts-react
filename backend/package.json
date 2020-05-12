@@ -6,6 +6,7 @@
   "dependencies": {
     "@types/react-router": "^5.1.7",
     "@types/react-router-dom": "^5.1.5",
+    "axios": "^0.19.2",
     "concurrently": "^5.2.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.3"

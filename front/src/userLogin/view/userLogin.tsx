@@ -1,6 +1,6 @@
 import React from 'react';
 import UserLoginVM from '../viewModel/userLoginVM'
-import {MobXProviderContext, observer, Provider} from 'mobx-react';
+import {observer, Provider} from 'mobx-react';
 import UserLoginVO from '../VO/userLoginVO' 
 
 interface userLoginProp {
@@ -11,10 +11,10 @@ const Content = observer(() => {
     const userLoginVM = UserLoginVM.getInstance() as UserLoginVM;
     let id:string, password:string;
 
-    const onSubmit = (e : any) => {
-        e.preventDefault();
-        userLoginVM.matchUser(new UserLoginVO(id, password));
-    }
+const onSubmit = (e : any) => {
+    e.preventDefault();
+    userLoginVM.matchUser(new UserLoginVO(id, password));
+}
 
     const onChange : any = (e : any) => {
         switch(e.target.name) {
