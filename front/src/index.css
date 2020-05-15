@@ -12,11 +12,6 @@ code {
     monospace;
 }
 
-body {
-  background: url(./common/images/background_gradation.png);
-  
-}
-
 #root {
   margin: 0 auto;
   width: 1130px;
