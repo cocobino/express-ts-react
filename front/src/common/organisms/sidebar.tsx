@@ -10,8 +10,8 @@ function Header() : any {
   }
   return (
     <div className="sidebar">
-      <ImageButton imageSrc={FriendImg} alt={'친구'} css={btnCss}/>
-      <ImageButton imageSrc={ChatImg} alt={'친구'} css={btnCss}/>
+      <ImageButton imageSrc={FriendImg} alt={'친구'} css={btnCss} link={''}/>
+      <ImageButton imageSrc={ChatImg} alt={'친구'} css={btnCss} link={''}/>
     </div>
   );
 }

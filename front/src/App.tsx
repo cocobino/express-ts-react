@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from './common/organisms/sidebar'
+import Sidebar from './common/organisms/sidebar'
 
 function App() : any {
   return (
     <>
-      <Header></Header>
+      <Sidebar></Sidebar>
     </>
   );
 }
