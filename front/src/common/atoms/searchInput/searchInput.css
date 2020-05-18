@@ -1,0 +1,8 @@
+.header_search {
+    background: #f6f6f7;
+    border-radius: 15px;
+    border: 1px solid #eff0f2;
+    outline: none;
+    height: 30px;
+    padding: 0 10px;
+}
