@@ -1,0 +1,86 @@
+  /*********************
+        친구리스트
+  *********************/
+  
+  .friend_image {
+    position: relative;
+    top: 4px;
+  }
+  
+  .friend_name {
+    position: absolute;
+    font-weight: bold;
+    margin-top: 3px;
+    font-size: 15px;
+    left: 70px;
+  }
+  
+  .friend_message {
+    margin-left: 10px;
+    color: #737373;
+    text-decoration: none;
+  }
+
+
+  /*********************
+        마이페이지
+  *********************/
+  .myPage_image {
+    position: relative;
+    top: 4px;
+  }
+  
+  .myPage_name {
+    position: absolute;
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 13px;
+    left: 70px;
+  }
+  
+  .myPage_message {
+    margin-left: 10px;
+    color: #737373;
+    text-decoration: none;
+    font-size: 12px;
+  }
+
+  .myPage {
+    padding: 5px 0;
+  }
+
+    /*********************
+        채팅리스트
+  *********************/
+  
+  .chatList {
+    padding: 5px 0;
+  }
+
+  .chatList_image {
+    position: relative;
+    top: 4px;
+  }
+  
+  .chatList_name {
+    position: absolute;
+    font-weight: bold;
+    margin-top: 3px;
+    font-size: 15px;
+    left: 70px;
+  }
+  
+  .chatList_message {
+    margin-left: 10px;
+    color: #737373;
+    text-decoration: none;
+  }
+
+  .chatList_time {
+    position: relative;
+    top: 3px;
+    left: -60px;
+    float: right;
+    color: #bfbfbf;
+    font-size: 12px;
+  }
