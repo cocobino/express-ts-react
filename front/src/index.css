@@ -65,3 +65,25 @@ width: 10px height 10px;}
   color: #737373;
   text-decoration: none;
 }
+
+
+.loginpage {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffeb33;
+}
+
+.loginpage_logo {
+  position: relative;
+  top: 20%;
+  margin: 0 auto;
+  display: block;
+}
+
+.loginpage_inputArea {
+  position: relative;
+  top: 30%;
+}

@@ -8,6 +8,7 @@ import List from '../../../common/molecules/List/List';
 
 import { IChat } from '../Repository/chatRepository';
 import UserDefaultImg from '../../../resource/image/userDefault.png';
+import Sidebar from '../../../common/organisms/sidebar/sidebar';
 
 const chatView = observer(() => {
         //getChatList
@@ -18,6 +19,7 @@ const chatView = observer(() => {
         return (
             <>
             <Header title={'채팅'} placeholder={'채팅방 이름, 참여자 검색'}/>
+            <Sidebar />
             <div className="mainpage">
                 <ul className="mainpage_List">
                     {getChatList}
