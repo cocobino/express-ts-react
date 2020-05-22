@@ -1,4 +1,5 @@
 import LoginModel from "../Model/loginModel";
+import { ILogin } from "../Repository/loginRepository";
 
 class LoginViewModel {
     private _LoginModel: LoginModel;
@@ -7,7 +8,7 @@ class LoginViewModel {
         this._LoginModel = LoginModel.getInstance();
     }
 
-    sendLoginData(loginData: {}) {
+    sendLoginData(loginData: ILogin) {
         this._LoginModel.sendLoginData(loginData);
     }
 

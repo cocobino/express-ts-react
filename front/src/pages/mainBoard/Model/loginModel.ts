@@ -11,7 +11,7 @@ export default class LoginModel {
         return this._LoginModel;
     }
 
-    sendLoginData(loginData : {} ) {
+    sendLoginData(loginData : ILogin ) {
         axios.interceptors.request.use(function (config) {
             return config;
         }, function (error) {

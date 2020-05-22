@@ -35,8 +35,22 @@ app.get('/chatList', cors(corsOpt), (req, res) => {
 
 //로그인
 app.post('/loginRequest', cors(corsOpt), (req, res) => {
-    console.log(req.body)
-    res.json({'loginYn' : 'true'});
+    if(typeof req.body !== 'undefined') {
+        res.json({'loginYn' : 'true'});
+    } else {
+        res.json({'loginYn' : 'false'});
+    }
+});
+
+//회원가입
+app.post('/joinUser', cors(corsOpt), (req, res) => {
+    console.log(req.body);
+    
+    if(typeof req.body !== 'undefined') {
+        res.json({'loginYn' : 'true'});
+    } else {
+        res.json({'loginYn' : 'false'});
+    }
 });
  
 app.listen(PORT,()=>{

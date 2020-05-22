@@ -7,8 +7,8 @@ export interface ILogin {
 }
  
 class LoginRepositroy {
-    sendLoginData(loginData : {}) : Promise<AxiosResponse<ILogin>> {
-        const url = 'http://localhost:5000/loginRequest'
+    sendLoginData(loginData : ILogin) : Promise<AxiosResponse<ILogin>> {
+        const url = 'http://localhost:5000/joinUser'
         return axios({
             headers: {
                 'Content-Type': 'application/json'

@@ -87,3 +87,17 @@ width: 10px height 10px;}
   position: relative;
   top: 30%;
 }
+
+.loginpage_join {
+  position: relative;
+  text-align: center;
+    margin-top: 15px;
+}
+
+.loginpage_join > a{
+  text-decoration: none;
+  color: #7f7519;
+  font-size: 12px;
+  position: relative;
+  padding: 10px;
+  }
