@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {observer} from 'mobx-react'
-
+import { Redirect } from "react-router-dom"
 import '../../../index.css';
 import LoginMark from '../../../resource/image/loginMark.gif'
 import Input from '../../../common/atoms/input/input';
@@ -8,14 +8,18 @@ import {getFormParam} from '../../../common/module/form';
 import LoginViewModel from '../ViewModel/loginViewModel';
 
 const LoginView = observer(() => {
-    
 
     const onSubmit = (e) => {
         e.preventDefault();
-        LoginViewModel.sendLoginData(getFormParam(e));
+        LoginViewModel.sendLoginData(getFormParam(e))
     }
-    
-        return (
+
+    if(LoginViewModel.loginState) {
+        return <Redirect to='/friend' />;
+    }
+
+    return  (
+        <>
             <div className="loginpage">
                 <img className="loginpage_logo" src={LoginMark}  alt="로고"/>
                 <div className="loginpage_inputArea">
@@ -26,7 +30,8 @@ const LoginView = observer(() => {
                     </form>
                 </div>
             </div>
-        );
+        </>
+    );
 });
 
 export default LoginView; 

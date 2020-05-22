@@ -5,14 +5,9 @@ export interface ILogin {
     id: string;
     password : string;
 }
-
-
+ 
 class LoginRepositroy {
-
-    
     sendLoginData(loginData : {}) : Promise<AxiosResponse<ILogin>> {
-        
-
         const url = 'http://localhost:5000/loginRequest'
         return axios({
             headers: {

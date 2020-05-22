@@ -1,8 +1,9 @@
 import React from 'react';
 import './List.css';
 import {Link} from 'react-router-dom';
+import {observer} from 'mobx-react';
 
-function List({userImage, name, message, url, type, time}) : any {
+const List = observer(({userImage, name, message, url, type, time}) => {
   return (
     <Link to={url}>
         <li className={type}>
@@ -13,6 +14,6 @@ function List({userImage, name, message, url, type, time}) : any {
         </li>
     </Link>
   );
-}
+});
 
 export default List;

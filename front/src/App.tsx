@@ -7,14 +7,13 @@ import UserPageView from './pages/mainBoard/View/userPageView'
 import LoginView from './pages/mainBoard/View/loginView';
 
 function App() : any {
-  console.log('엡렌더')
   return (
     <Router>
       {/* <Sidebar></Sidebar> */}
       <Route exact path="/friend" component={FriendView}/>
       <Route exact path="/chat" component={ChatView}/>
       <Route exact path="/myPage" component={UserPageView}/>
-      <Route exact path="/login" component={LoginView}/>
+      <Route exact path="/login" render={props => <LoginView />}/>
     </Router>
   );
 }

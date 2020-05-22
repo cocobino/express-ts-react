@@ -14,6 +14,7 @@ import { IFriend } from '../Repository/friendRepository';
 import Sidebar from '../../../common/organisms/sidebar/sidebar';
 
 const friendView = observer(() => {
+    console.log('뷰렌터')
     //getFriendList
     const getFriendList: any = FriendViewModel.getFriendList();
     const drawFriendList = getFriendList.map(( data:IFriend, i:number ) => 
