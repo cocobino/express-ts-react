@@ -14,7 +14,7 @@ export default class JoinModel {
         JoinRepository.joinRequest(joinData)
         .then((d) => {
             debugger;
-            console.log(d)
+            window.location.href='/login';
         })
         .catch((err) => {
             new Error(err);

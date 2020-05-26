@@ -14,7 +14,6 @@ function JoinView() {
 
     const onSubmit = (e : any) : void => {
         e.preventDefault();
-        debugger;
         JoinViewModel.joinRequest(getFormParam(e, JoinVO));
     }
 

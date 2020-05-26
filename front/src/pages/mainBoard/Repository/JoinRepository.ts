@@ -1,9 +1,9 @@
 import axios, {AxiosResponse} from 'axios';
 
 export interface IJoin {
-    id:string;
-    password:string;
-    nickName:string;
+    id : string;
+    password : string;
+    nickName : string;
 }
 
 class JoinRepository {

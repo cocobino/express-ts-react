@@ -9,7 +9,6 @@ class JoinViewModel {
     }
 
     joinRequest(joinData : IJoin) : void {
-        debugger;
         this._JoinModel.joinRequest(joinData);
     }
 }
