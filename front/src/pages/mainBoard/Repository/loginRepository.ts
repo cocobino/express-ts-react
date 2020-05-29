@@ -8,14 +8,15 @@ export interface ILogin {
  
 class LoginRepositroy {
     sendLoginData(loginData : ILogin) : Promise<AxiosResponse<ILogin>> {
-        const url = 'http://localhost:5000/joinUser'
+        const url:string = 'http://localhost:5000/loginUser'
+
         return axios({
             headers: {
                 'Content-Type': 'application/json'
             },
-            data: JSON.stringify(loginData),
+            method: 'post',
             url,
-            method: 'post'
+            data: JSON.stringify(loginData)
         });
     }
 }

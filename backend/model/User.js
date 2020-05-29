@@ -8,7 +8,8 @@ const UserSchema = new mongoose.Schema({
         required : true
     },
     password:String,
-    nickName:String
+    nickName:String,
+    friendList : []
 });
 
 mongoose.model('User', UserSchema);

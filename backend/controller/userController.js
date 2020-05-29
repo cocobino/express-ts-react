@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+const userService = require('../service/userService');
 
 router.use(bodyParser.urlencoded({ extended:true }));
 
@@ -9,25 +9,27 @@ const User = require('../model/User');
 
 //CreateUser
 router.post('/joinUser', (req, res) => {
-    console.log(req.body);
-    
-    mongoose.connection.db.collection("users", function(err, collection){
-        collection.find({'id' : req.body._id}).toArray(function(err, data){
-                console.log('query : ', data);
-            if(data) {
-                return res.status(200).send(false);
-            }
-        })
-    });
-
-    User.create({
-        id : req.body._id,
-        password : req.body._password,
-        nickName : req.body._nickName
-    },
-    (err, user) => {
-        if(err)return res.status(500).send(false);
-        res.status(200).send(user);
+    userService.checkDuplication('users', 'id', req.body._id)
+    .then((d) => {
+        console.log(d);
+        if(!d.length) {
+            User.create({
+                id : req.body._id,
+                password : req.body._password,
+                nickName : req.body._nickName,
+                friendList : []
+            },
+            (err, user) => {
+                if(err)return res.status(500).send(err);
+                res.status(200).send(true);
+            });
+        } else {
+            res.status(200).send('duple');
+        }
+    })
+    .catch((err) => {
+        res.status(200).send('duple');
+        new Error(err);
     });
 });
 

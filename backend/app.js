@@ -10,6 +10,11 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const UserController = require('./controller/userController');
+const LoginController = require('./controller/loginController');
+const SearchFriendController = require('./controller/searchFriendController');
+
 app.post('/joinUser', UserController);
+app.post('/loginUser', LoginController);
+app.post('/searchFriend', SearchFriendController);
 
 module.exports = app;

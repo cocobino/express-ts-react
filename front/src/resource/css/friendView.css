@@ -1,0 +1,58 @@
+.mainpage {
+    position: relative;
+    left: 65px;
+  }
+  
+  .mainpage_List {
+    list-style: none;
+    padding: 0 20px;
+  }
+  
+  .friend_image {
+    position: relative;
+    top: 4px;
+  }
+  
+  .friend_name {
+    position: absolute;
+    font-weight: bold;
+    margin-top: 3px;
+    font-size: 15px;
+    left: 70px;
+  }
+  
+  .mainpage_List {
+    padding: 0;
+  }
+  
+  .mainpage_List > a {
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    color: #333;
+    
+  }
+  
+  .mainpage_List > a:hover {
+    background: #f2f2f3;
+  }
+  
+  .friend_message {
+    margin-left: 10px;
+    color: #737373;
+    text-decoration: none;
+  }
+  
+  .mainpage_addFriendBtn{
+    position: relative;
+    padding: 15px;
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-right: 45px;
+    top: -70px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: url('../image/friendAdd.gif') no-repeat;
+  }

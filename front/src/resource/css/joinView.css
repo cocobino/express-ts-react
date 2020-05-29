@@ -36,8 +36,16 @@
 }
 .joinPage_input::placeholder {color: #d6cfcc;}
 
-.joinPage_input:focus {
+input.duple {
+    border-bottom: 2px solid #e77663;
+}
+
+
+.joinPage_input:focus,
+.joinPage_input:active {
     border-bottom: 1px solid #333;
+    background: transparent;
+    border-bottom: 1px solid #ebebeb;
 }
 
 .joinPage_submit {
@@ -61,4 +69,6 @@
     top: 250px;
     color: #e77663;
     position: absolute;
+    font-size: 13px;
+    font-weight: bold;
 }

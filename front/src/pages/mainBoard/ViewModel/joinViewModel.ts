@@ -11,6 +11,22 @@ class JoinViewModel {
     joinRequest(joinData : IJoin) : void {
         this._JoinModel.joinRequest(joinData);
     }
+
+    valid(data) : string {
+        for(let i=0; i< Object.keys(data).length; i++) {
+            if(!data[Object.keys(data)[i]]) {
+                return 'blank'
+            } 
+        }
+        if(data.password !== data._passwordRe){
+            return 'password'
+        }
+        return 'success';
+    }
+
+    isDuple() {
+        return this._JoinModel.isDuple;
+    }
 }
 
 export default new JoinViewModel();

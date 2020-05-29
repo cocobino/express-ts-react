@@ -11,3 +11,13 @@ export const getFormParam = (e: any, Model: any) : any => {
     
     return Object.assign(VO, param);
 }
+
+export const getData = (e:any) : any => {
+    let param:{} = {};
+    let target = e.currentTarget;
+
+    for(let i=0; i< target.length-1; i++) {
+        param[target[i].name] = target[i].value;
+    }
+    return param;
+}

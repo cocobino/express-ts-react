@@ -7,7 +7,7 @@ export interface IJoin {
 }
 
 class JoinRepository {
-    joinRequest(user:IJoin) :Promise<AxiosResponse<boolean>>{
+    joinRequest(user : IJoin) :Promise<AxiosResponse<boolean>>{
         const url:string ='http://localhost:5000/joinUser';
 
         return axios({
