@@ -4,23 +4,20 @@ import './Modal.css';
 import SearchFriendViewModel from '../../../pages/mainBoard/ViewModel/serachFriendViewModel';
 
 
-const SearchFriend= observer(() => {
-    
+const SearchFriend = observer(() => {
+    let isenter:boolean = false;
     const onKeyDown = (e : any) : void => {
         const id = e.target.value;
         if(e.key ==='Enter') {
             SearchFriendViewModel.searchFriend(id);
+            isenter = true;
         }
     }
 
-    const friendData = SearchFriendViewModel.SearchFriendData ? 
-    (<div>테스트</div>) :
-     '등록된 친구가 없습니다.';
-    debugger;
     return (
         <>
             <input className="modalPage_input" type="text" onKeyDown={onKeyDown}/>
-            <div className="modalPage_state">{friendData}</div>
+            <div className="modalPage_state">{SearchFriendViewModel.SearchFriendData()}</div>
         </>
     )
 });

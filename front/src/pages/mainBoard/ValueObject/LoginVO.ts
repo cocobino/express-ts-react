@@ -24,7 +24,7 @@ export default class LoginVO implements ILogin{
 	public set id(value: string) {
 		this._id = value;
 	}
-
+    
     /**
      * Getter password
      * @return {string}

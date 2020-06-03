@@ -12,9 +12,11 @@ app.use(bodyParser.json());
 const UserController = require('./controller/userController');
 const LoginController = require('./controller/loginController');
 const SearchFriendController = require('./controller/searchFriendController');
+const FriendViewController = require('./controller/friendViewController');
 
 app.post('/joinUser', UserController);
 app.post('/loginUser', LoginController);
 app.post('/searchFriend', SearchFriendController);
+app.post('/myInfo', FriendViewController);
 
 module.exports = app;

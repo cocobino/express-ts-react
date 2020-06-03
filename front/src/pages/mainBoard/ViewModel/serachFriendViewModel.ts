@@ -8,13 +8,18 @@ class SearchFriendViewModel {
     }
 
     searchFriend(data : string) : void {
-        this._searchFriendMoel.searchFriend(data)
+        this._searchFriendMoel.searchFriend(data);
     };
 
-    get SearchFriendData() {
+    SearchFriendData() {
         const data = this._searchFriendMoel.searchFriendData;
         debugger;
-        return data;
+        if(typeof data?.id  ==='undefined') {
+            return '검색결과가 없습니다.';
+        }else {
+            debugger;
+            return data;
+        }
     }
 }
 

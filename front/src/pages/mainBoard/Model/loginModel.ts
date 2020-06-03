@@ -13,6 +13,7 @@ export default class LoginModel {
     }
 
     sendLoginData(loginData : ILogin ) {
+        sessionStorage.setItem('id', loginData.id);
         axios.interceptors.request.use(function (config) {
             return config;
         }, function (error) {
