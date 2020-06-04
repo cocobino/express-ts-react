@@ -39,4 +39,16 @@ router.post('/friendList', (req, res)=> {
         });
 });
 
+//addFriend
+router.post('/addFriend', (req, res) => {
+    console.log(req.body);
+    // friendViewService.addFriend('users' req.body)
+    // .then ((d) => {
+        
+    // })
+    // .catch((err) => {
+
+    // });
+});
+
 module.exports = router;

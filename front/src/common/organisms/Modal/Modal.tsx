@@ -1,37 +1,52 @@
 import React, { useState } from 'react';
 import {observer} from 'mobx-react';
+import ModalViewModel from './ModalViewModel';
 import './Modal.css';
-import SearchFriendViewModel from '../../../pages/mainBoard/ViewModel/serachFriendViewModel';
-
+import searchFriendViewModel from '../../../pages/mainBoard/ViewModel/searchFriendViewModel';
+import DefaultUser from '../../../resource/image/userDefault.png';
 
 const SearchFriend = observer(() => {
-    let isenter:boolean = false;
     const onKeyDown = (e : any) : void => {
-        const id = e.target.value;
         if(e.key ==='Enter') {
-            SearchFriendViewModel.searchFriend(id);
-            isenter = true;
+            searchFriendViewModel.loadserachFriend(e.target.value);
         }
     }
+
+    const onClick = () => { 
+        searchFriendViewModel.AddSearchFriend();
+    }
+
+    //친구가있을경우
+    const msg = searchFriendViewModel.getSearchFriend() === 'empty' ? 'ID를 입력해 친구를 검색하세요.' : 
+    ( <div className="searchFriend_Img">
+        <img src={DefaultUser} />
+        <div>{searchFriendViewModel.getSearchFriend()}</div>
+        <button className="searchFriend" onClick={onClick}>친구추가</button>
+    </div> );
 
     return (
         <>
             <input className="modalPage_input" type="text" onKeyDown={onKeyDown}/>
-            <div className="modalPage_state">{SearchFriendViewModel.SearchFriendData()}</div>
+            <div className="modalPage_state">{msg}</div>
         </>
     )
 });
 
 
-const Modal = observer(({opt}) => {
-    
+const Modal = observer(() => {
+
+
+        const onClick = () :any => {
+            ModalViewModel.closeModal();
+        }
+        
         return (
-        <div style={opt.show ? {display : 'block'} : {display : 'none'}}>
+        <div style={ModalViewModel.getOnOff ? {display : 'block'} : {display : 'none'}}>
             <div className="maskingPage"></div>
             <div className="modalPage">
                 {/* header */}
                <div className="modalPage_header">
-                    <button className="modalPage_header_closeBtn" type="button" onClick={opt.closeModal}></button>
+                    <button className="modalPage_header_closeBtn" type="button" onClick={onClick}></button>
                     <h1 className="modalPage_header_h1">친구추가</h1>
                 </div> 
                 {/* body */}

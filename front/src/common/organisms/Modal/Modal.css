@@ -69,3 +69,26 @@
     color: #999999;
     margin-top: 10px;
 }
+
+.modalPage_state {
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.searchFriend_Img {
+    margin-left: 110px;
+}
+
+.searchFriend {
+    background: #fee500;
+    outline: none;
+    border-radius: 3px;
+    margin-left: 75px;
+    border: none;
+    padding: 10px 15px;
+}
+
+.searchFriend:hover {
+    cursor: pointer;
+}

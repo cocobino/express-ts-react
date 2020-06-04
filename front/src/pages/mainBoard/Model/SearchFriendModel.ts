@@ -1,31 +1,40 @@
-import SearchFriendRepository from '../Repository/serachFriendRepository';
-import { observable } from 'mobx';
-import FriendVO from '../ValueObject/FriendVO';
+import SearchFriendRepository from "../Repository/SearchFriendRepository";
+import FriendVO from "../ValueObject/FriendVO";
+import { observable } from "mobx";
 
 export default class SearchFriendModel {
-    public static _SearchFriendModel;
-    @observable private _serachFriendData:FriendVO|null=null;
+    public static SearchFriendModel:SearchFriendModel;
+    @observable private friend:FriendVO = new FriendVO('','','');
 
-    private constructor() {}
-    public static getInstance() : SearchFriendModel {
-        if(!this._SearchFriendModel) {
-            this._SearchFriendModel = new SearchFriendModel();
+    public static get getInstance() {
+        if(!this.SearchFriendModel) {
+            this.SearchFriendModel = new SearchFriendModel();
         }
-        return this._SearchFriendModel;
+        return this.SearchFriendModel;
     }
 
-    searchFriend(data : string) : void {
-        SearchFriendRepository.searchFriend(data)
+    loadsearchFriend(id:string) {
+        SearchFriendRepository.loadsearchFriend(id)
         .then((d) => {
-            this._serachFriendData = new FriendVO(d.data[0].id, d.data[0].nickName, d.data[0].message);
-            debugger;
+            this.friend = new FriendVO(d.data[0].id , d.data[0].nickName, d.data[0].message );
         })
-        .catch((err) => {
+        .catch((err) => {   
             new Error(err);
         });
     }
 
-    get searchFriendData() {
-        return this._serachFriendData;
+    AddSearchFriend() {
+        SearchFriendRepository.AddSearchFriend(this.friend)
+        .then((data) => {
+
+        })
+        .catch((err) => {
+
+        });
+    }
+
+
+    get SearchFriend() {
+        return this.friend;
     }
 }

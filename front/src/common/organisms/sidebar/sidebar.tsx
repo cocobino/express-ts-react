@@ -4,8 +4,9 @@ import './sidebar.css';
 import FriendImg from '../../../resource/image/friendIcon.png';
 import ChatImg from '../../../resource/image/chatIcon.png'
 import {BrowserRouter as Link } from 'react-router-dom';
+import { observer } from 'mobx-react';
 
-function Header() : any {
+const Header= observer(() : any => {
   const btnCss = {
     'padding': '21px'
   }
@@ -22,7 +23,7 @@ function Header() : any {
       </div>
     </>
   );
-}
+});
 
 
 export default Header;

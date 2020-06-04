@@ -1,7 +1,8 @@
 import React from 'react';
 import './customDivLine.css';
+import { observer } from 'mobx-react';
 
-function CustomDivLine({name, count}) {
+const CustomDivLine = observer(({name, count}) => {
 
     return (
         <div className="customDivLine">
@@ -9,6 +10,6 @@ function CustomDivLine({name, count}) {
             <span className="customDivLine_txt">{count}</span>
         </div>
     )
-}
+});
 
 export default CustomDivLine;

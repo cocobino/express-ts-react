@@ -28,6 +28,9 @@ const fn = {
                 })
             });
         });
+      },
+      addFriend(schema, target) {
+        
       }
     }
 

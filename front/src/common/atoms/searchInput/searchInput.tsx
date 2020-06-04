@@ -1,10 +1,11 @@
 import React from 'react';
 import './searchInput.css';
+import { observer } from 'mobx-react';
 
-function searchInput({placeholder}) : any {
+const searchInput = observer(({placeholder}) : any => {
   return (
     <input type="search" className="header_search" placeholder={placeholder}/>
   );
-}
+});
 
 export default searchInput;

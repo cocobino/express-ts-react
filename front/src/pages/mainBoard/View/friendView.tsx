@@ -11,6 +11,8 @@ import UserDefaultImg2 from '../../../resource/image/userDefault2.png';
 import { observer } from 'mobx-react';
 import { IFriend } from '../Repository/friendRepository';
 import Sidebar from '../../../common/organisms/sidebar/sidebar';
+import ModalViewModel from '../../../common/organisms/Modal/ModalViewModel';
+import Modal from '../../../common/organisms/Modal/Modal';
 
 
 
@@ -24,12 +26,15 @@ const friendView = observer(() => {
      <List key={i+1} userImage = {UserDefaultImg} name = {data.name} message = {data.message} url={'/chat'} type={'friend'} time={''}/>
     );
     
+    const onClick = ():any => {
+        ModalViewModel.showModal();
+    }
     
     return (
         <>
             <Header title={'친구'} placeholder={"이름 검색"}/>
             <Sidebar />
-            <button className="mainpage_addFriendBtn" ></button>
+            <button className="mainpage_addFriendBtn" onClick={onClick}></button>
             <div className="mainpage">
                 <ul className="mainpage_List">
                     <List key={0} userImage ={UserDefaultImg2} name={myInfo.name} message={myInfo.message} url={'/myPage'} type={'myPage'} time={''} />
@@ -37,6 +42,8 @@ const friendView = observer(() => {
                     {drawFriendList}            
                 </ul>
             </div>
+
+            <Modal />
         </>
     );
 });

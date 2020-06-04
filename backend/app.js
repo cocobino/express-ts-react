@@ -19,5 +19,5 @@ app.post('/loginUser', LoginController);
 app.post('/searchFriend', SearchFriendController);
 app.post('/myInfo', FriendViewController);
 app.post('/friendList', FriendViewController);
-
+app.post('/addFriend', FriendViewController);
 module.exports = app;
