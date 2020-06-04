@@ -4,12 +4,12 @@ import FriendVO from '../ValueObject/FriendVO';
 
 export default class FriendModel {
     private static _FriendModel : FriendModel;
-    @observable private data:IFriendList|[] = [];
+    @observable private data:any = [];
     @observable private myInfo:FriendVO = new FriendVO('','','');
     //singleton
     private constructor () {
-        // this.loadFriendList();
         this.loadMyInfo();
+        this.loadFriendList();
     }
     public static getInstance() : FriendModel {
         if(!this._FriendModel) {
@@ -20,9 +20,13 @@ export default class FriendModel {
     
     //친구목록받아오기
     private loadFriendList() : void {
-        FriendRepositroy.getFriendList()
+        FriendRepositroy.getFriendList(sessionStorage.getItem('id'))
         .then((d : any) => {
-           this.data = d.data; 
+           const len = d.data.friendList.length;
+            for(let i=0; i<len; i++) {
+                const Friend = JSON.parse(d.data.friendList[i]);
+                this.data.push(new FriendVO(Friend.id, Friend.nickName, Friend.message));
+            }
         })
         .catch((err) => {
             new Error(err);
@@ -30,7 +34,7 @@ export default class FriendModel {
     }
 
     //내정보
-    private loadMyInfo() : void {
+    public loadMyInfo() : void {
         FriendRepositroy.getMyInfo(sessionStorage.getItem('id'))
         .then((d :any) => {
             this.myInfo = new FriendVO(d.data.id, d.data.name, d.data.message);

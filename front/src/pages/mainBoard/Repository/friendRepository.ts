@@ -11,11 +11,12 @@ export interface IFriendList {
 }
 
 class FriendRepositroy {
-    getFriendList() :Promise<AxiosResponse<IFriendList>> {
+    getFriendList(id:string|null) :Promise<AxiosResponse<IFriendList>> {
         const url = 'http://localhost:5000/friendList';
         return axios({
             url,
-            method: 'get'
+            method: 'post',
+            data: {'id':id}
         });
     }
 

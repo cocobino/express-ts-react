@@ -1,12 +1,13 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import './imageButton.css';
+import { observer } from 'mobx-react';
 
-function ImageButton({imageSrc, alt, css, type}) : any {
+const ImageButton = observer(({imageSrc, alt, css, type}) => {
   return (
       <button className="ImageBtn" style={css} >
         <img src={imageSrc} alt={alt} />
       </button>
   );
-}
+});
 
 export default ImageButton;

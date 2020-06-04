@@ -11,6 +11,10 @@ class FriendViewModel {
         return this._FriendModel.getFriendList;
     }
 
+    public loadMyInfo() : any {
+        this._FriendModel.loadMyInfo();
+    }
+
     get getMyInfo() : any {
         return this._FriendModel.getMyInfo;
     }

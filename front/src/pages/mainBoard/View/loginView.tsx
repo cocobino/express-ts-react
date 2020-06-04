@@ -37,7 +37,7 @@ const LoginView = observer(() => {
                     <div className="loginpage_join">
                         <Link to='/join'>짭카오톡 가입하기</Link>
                     </div>
-                    <span className="loginpage_msg">{LoginViewModel.loginState === 'fail' ? '아이디/ 비밀번호를 확인해주세요.' : msg}</span>
+                    <span className="loginpage_msg">{LoginViewModel.loginState === 'fail' ? '아이디 / 비밀번호를 확인해주세요.' : msg}</span>
                 </div>
             </div>
         </>

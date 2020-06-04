@@ -15,13 +15,28 @@ router.post('/myInfo', (req, res) => {
                 id: d[0].id,
                 name: d[0].nickName,
                 message : d[0].message,
+            });
+        })
+        .catch((err) => {
+            res.status(500).send(false);
+            new Error(err);
+        });
+});
+
+//friendList
+router.post('/friendList', (req, res)=> {
+    console.log(req.body);
+    friendViewService.getFriendList('users', req.body)
+        .then((d) => {
+            console.log(d);
+            res.status(200).send({
                 friendList: d[0].friendList
             });
         })
         .catch((err) => {
             res.status(500).send(false);
             new Error(err);
-        })
+        });
 });
 
 module.exports = router;

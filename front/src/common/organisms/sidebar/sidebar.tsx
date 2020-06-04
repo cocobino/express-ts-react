@@ -3,7 +3,7 @@ import ImageButton from '../../atoms/imageBtn/imageButton';
 import './sidebar.css';
 import FriendImg from '../../../resource/image/friendIcon.png';
 import ChatImg from '../../../resource/image/chatIcon.png'
-import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import {BrowserRouter as Link } from 'react-router-dom';
 
 function Header() : any {
   const btnCss = {

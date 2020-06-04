@@ -2,10 +2,12 @@ import { observable } from "mobx";
 import axios from "axios";
 import loginRepository, { ILogin } from "../Repository/loginRepository";
 import { threadId } from "worker_threads";
+import FriendModel from "./friendModel";
 
 export default class LoginModel {
     private static _LoginModel : LoginModel;
     @observable private _isPossible : string = '';
+    private _FriendModel: FriendModel = FriendModel.getInstance();
 
     public static getInstance() :LoginModel{
         if(!this._LoginModel) this._LoginModel = new LoginModel;
@@ -29,6 +31,9 @@ export default class LoginModel {
         loginRepository.sendLoginData(loginData)
         .then((d : any) => {
             this._isPossible = d.data ? 'success' : 'fail';
+            if(this._isPossible === 'success') {
+                this._FriendModel.loadMyInfo();
+            }
         })
         .catch((err) => {
             this._isPossible = 'fail';
