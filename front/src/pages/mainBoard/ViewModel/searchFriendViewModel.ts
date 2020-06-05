@@ -1,19 +1,19 @@
-import  SearchFriendModel  from "../Model/searchFriendModel";
+import FriendModel from "../Model/friendModel";
 
 class SearchFriendViewModel {
-    private _SearchFriendModel:SearchFriendModel;
+    private _FriendModel:FriendModel;
 
     constructor() {
-        this._SearchFriendModel = SearchFriendModel.getInstance;
+        this._FriendModel = FriendModel.getInstance();
     }
 
     loadserachFriend(id : string) {
-        this._SearchFriendModel.loadsearchFriend(id);
+        this._FriendModel.loadsearchFriend(id);
     }
 
 
     getSearchFriend() {
-        const friend = this._SearchFriendModel.SearchFriend;
+        const friend = this._FriendModel.SearchFriend;
         
         if(!friend.id) {
             return 'empty';
@@ -23,7 +23,7 @@ class SearchFriendViewModel {
     }
 
     AddSearchFriend() {
-        this._SearchFriendModel.AddSearchFriend();
+        this._FriendModel.AddSearchFriend();
     }
 }
 

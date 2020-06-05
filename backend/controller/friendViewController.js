@@ -41,14 +41,14 @@ router.post('/friendList', (req, res)=> {
 
 //addFriend
 router.post('/addFriend', (req, res) => {
-    console.log(req.body);
-    // friendViewService.addFriend('users' req.body)
-    // .then ((d) => {
-        
-    // })
-    // .catch((err) => {
-
-    // });
+    friendViewService.addFriend('users', req.body)
+    .then((data) => {
+        console.log(data);
+        res.status(200).send(true);
+    })
+    .catch((err) => {
+        new Error(err);
+    });
 });
 
 module.exports = router;

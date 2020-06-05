@@ -1,11 +1,13 @@
 import FriendRepositroy, { IFriendList } from '../Repository/friendRepository';
 import { observable, action } from 'mobx';
 import FriendVO from '../ValueObject/FriendVO';
+import SearchFriendRepository from '../Repository/SearchFriendRepository';
 
 export default class FriendModel {
     private static _FriendModel : FriendModel;
     @observable private data:any = [];
     @observable private myInfo:FriendVO = new FriendVO('','','');
+    @observable private friend:FriendVO = new FriendVO('','','');
     //singleton
     private constructor () {
         this.loadMyInfo();
@@ -43,6 +45,32 @@ export default class FriendModel {
             new Error(err);
         });
     }
+
+    loadsearchFriend(id:string) {
+        SearchFriendRepository.loadsearchFriend(id)
+        .then((d) => {
+            this.friend = new FriendVO(d.data[0].id , d.data[0].nickName, d.data[0].message );
+        })
+        .catch((err) => {   
+            new Error(err);
+        });
+    }
+
+    AddSearchFriend() {
+        SearchFriendRepository.AddSearchFriend(this.friend)
+        .then((d) => {
+            this.loadFriendList();
+        })
+        .catch((err) => {
+
+        });
+    }
+
+
+    get SearchFriend() {
+        return this.friend;
+    }
+
 
     get getFriendList() : IFriendList| [] {
         return this.data;

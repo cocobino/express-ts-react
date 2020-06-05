@@ -14,6 +14,7 @@ const SearchFriend = observer(() => {
 
     const onClick = () => { 
         searchFriendViewModel.AddSearchFriend();
+        ModalViewModel.closeModal();
     }
 
     //친구가있을경우

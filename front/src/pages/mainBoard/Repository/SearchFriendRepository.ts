@@ -2,8 +2,6 @@ import axios, { AxiosResponse } from 'axios';
 import FriendVO from '../ValueObject/FriendVO';
 
 
-
-
 class SearchFriendRepository {
     //친구찾기
     loadsearchFriend(id:string):Promise<AxiosResponse<FriendVO>> {
@@ -18,7 +16,9 @@ class SearchFriendRepository {
         return axios({
             method: 'post',
             url:'http://localhost:5000/addFriend',
-            data: friend
+            data: {'addFriend' : friend,
+            'id' : sessionStorage.getItem('id')
+            }
         })
     }
     
