@@ -23,13 +23,15 @@ const friendView = observer(() => {
     //getFriendList
     const getFriendList: any = FriendViewModel.getFriendList();
     const drawFriendList = getFriendList.map(( data:IFriend, i:number ) => 
-     <List key={i+1} userImage = {UserDefaultImg} name = {data.name} message = {data.message} url={'/chat'} type={'friend'} time={''}/>
+     <List key={i+1} id = {data.id} userImage = {UserDefaultImg} name = {data.name} message = {data.message} url = {'/chat'} type = {'friend'} time = {''}/>
     );
     
     const onClick = ():any => {
         ModalViewModel.showModal();
     }
     
+    
+
     return (
         <>
             <Header title={'친구'} placeholder={"이름 검색"}/>
@@ -37,7 +39,7 @@ const friendView = observer(() => {
             <button className="mainpage_addFriendBtn" onClick={onClick}></button>
             <div className="mainpage">
                 <ul className="mainpage_List">
-                    <List key={0} userImage ={UserDefaultImg2} name={myInfo.name} message={myInfo.message} url={'/myPage'} type={'myPage'} time={''} />
+                    <List id={''} key={0} userImage ={UserDefaultImg2} name={myInfo.name} message={myInfo.message} url={'/myPage'} type={'myPage'} time={''}/>
                     <CustomDivLine name={'친구'} count={getFriendList.length}/>
                     {drawFriendList}            
                 </ul>

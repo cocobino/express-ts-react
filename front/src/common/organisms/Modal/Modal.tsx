@@ -10,6 +10,9 @@ const SearchFriend = observer(() => {
         if(e.key ==='Enter') {
             searchFriendViewModel.loadserachFriend(e.target.value);
         }
+        if(e.key === 'Escape') {
+            ModalViewModel.closeModal();
+        }
     }
 
     const onClick = () => { 

@@ -1,7 +1,16 @@
   /*********************
         친구리스트
   *********************/
-  
+  li {
+    padding: 5px 20px;
+  }
+
+  li:hover {
+    cursor: pointer;
+    background: whitesmoke;
+  }
+
+
   .friend_image {
     position: relative;
     top: 4px;
@@ -46,7 +55,7 @@
   }
 
   .myPage {
-    padding: 5px 0;
+    padding: 5px 20px;
   }
 
     /*********************

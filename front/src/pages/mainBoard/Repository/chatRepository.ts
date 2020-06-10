@@ -15,7 +15,17 @@ class ChatRepository {
         const url = 'http://localhost:5000/chatList';
         return axios({
             url,
-            method:'get'
+            method:'post'
+        });
+    }
+
+
+    loadChatData(from:string|null, to:string):Promise<AxiosResponse<IChatList>> {
+        const url = 'http://localhost:5000/chatData';
+        return axios({
+            url,
+            method:'post',
+            data:{'from':from, 'to':to}
         });
     }
 }

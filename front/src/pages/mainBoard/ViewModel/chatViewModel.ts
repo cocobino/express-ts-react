@@ -8,8 +8,15 @@ class ChatViewModel {
     }
 
     public getChatList() : any {
-        console.log('뷰모델 채팅리스트')
         return this._ChatModel.getChatList;
+    }
+
+    public loadChatData (from:string|null, to:string) {
+        this._ChatModel.loadChatData(from, to);
+    }
+
+    public getChatData() {
+        return this._ChatModel.getChatData;
     }
 }
 
